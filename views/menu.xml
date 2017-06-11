@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <!--MENU PARENT-->
+        <menuitem
+                id="menu_purchase_order_top"
+                name="Purchase Order"
+                sequence="7"/>
+        <menuitem
+                id="menu_purchase_order_left"
+                name="Purchase Order"
+                sequence="1"
+                parent="menu_purchase_order_top"
+                action="action_purchase_order"/>
+    </data>
+</odoo>

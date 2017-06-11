@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_budget_purchase_order_dependent,budget_purchase_order.purchase.order,model_budget_purchase_order,group_purchase_order_dependent,1,0,0,0
+access_budget_purchase_order_user,budget_purchase_order.purchase.order,model_budget_purchase_order,group_purchase_order_user,1,1,1,0
+access_budget_purchase_order_manager,budget_purchase_order.purchase.order,model_budget_purchase_order,group_purchase_order_manager,1,1,1,1
