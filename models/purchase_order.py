@@ -19,14 +19,14 @@ class PurchaseOrder(models.Model):
     state = fields.Selection(STATES, default='draft')
     no = fields.Char(string='Purchase Order')
     date = fields.Date(string='Date')
-    amount = fields.Monetary(string='Amount', currency_field='company_currency_id')
+    amount = fields.Monetary(string='Amount', currency_field='currency_id')
     status = fields.Char(string='Status')
     type = fields.Char(string='Type')
     remark = fields.Text(string='Remark')
 
     # RELATIONSHIPS
     # ----------------------------------------------------------
-    company_currency_id = fields.Many2one('res.currency', readonly=True,
+    currency_id = fields.Many2one('res.currency', readonly=True,
                                           default=lambda self: self.env.user.company_id.currency_id)
     contractor_id = fields.Many2one('res.partner',
                                     domain=[('is_budget_contractor', '=', True)],

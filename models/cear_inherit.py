@@ -18,7 +18,7 @@ class TaskInherit(models.Model):
 
     # RELATIONSHIPS
     # ----------------------------------------------------------
-    # company_currency_id already exist in the parent model
+    # currency_id already exist in the parent model
 
     po_ids = fields.Many2many('budget.purchase.order',
                               'budget_cear_po_rel',
