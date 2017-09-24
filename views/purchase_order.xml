@@ -10,37 +10,73 @@
             <field name="arch" type="xml">
                 <form string="Purchase Order">
                     <header>
-                        <!--<button-->
-                        <!--string="Generate"-->
-                        <!--name="generate"-->
-                        <!--type="workflow"-->
-                        <!--states="draft"/>-->
-                        <field name="state" widget="statusbar"/>
+                        <button name="set2active"
+                                type="object"
+                                string="Set to Active"
+                                states="draft"/>
+                        <button name="set2closed"
+                                type="object"
+                                string="Set to Closed"
+                                states="active"/>
+                        <button name="set2cancelled"
+                                type="object"
+                                string="Cancel Purchase Order"
+                                states="draft,active"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,active,closed"/>
                     </header>
                     <sheet>
+                        <group groups="base.group_no_one">
+                            <group>
+                                <field name="is_parent"/>
+                                <field name="currency_id"/>
+                            </group>
+                        </group>
                         <div class="oe_button_box" name="box">
                         </div>
                         <div class="oe_title">
                             <h1>
-                                <field name="no"/>
+                                <div class="o_row oe_edit_only">
+                                    <label for="no"/>
+                                </div>
+                                <field name="no" placeholder="Eg. 123456789-0" attrs="{'required' : True}"/>
                             </h1>
+                            <div class="o_row oe_edit_only">
+                                <label for="parent_id"/>
+                            </div>
+                            <field name="parent_id" options="{'no_open': True, 'no_create': True}"/>
                         </div>
                         <group>
                             <group>
-                                <field name="date"/>
-                                <field name="amount"/>
+                                <field name="contractor_id" options="{'no_open': True, 'no_create': True}"/>
                                 <field name="type"/>
+                                <field name="date"/>
                             </group>
                             <group>
-
+                                <field name="amount"/>
                             </group>
                         </group>
                         <group>
                             <field name="remark"/>
                         </group>
                         <notebook>
+                            <page string="Lines">
+                                <field name="po_line_ids">
+                                    <tree editable="bottom">
+                                        <field name="po_id" groups="base.group_no_one"/>
+                                        <field name="sequence" widget="handle"/>
+                                        <field name="description"/>
+                                        <field name="quantity" sum="1"/>
+                                        <field name="unit_price" sum="1"/>
+                                        <field name="revised_unit_price" sum="1"/>
+                                        <field name="total_amount" sum="1"/>
+                                    </tree>
+                                </field>
+                            </page>
                             <page string="CEARs">
                                 <field name="cear_ids"/>
+                            </page>
+                            <page string="OEARs">
+                                <field name="oear_ids"/>
                             </page>
                         </notebook>
                     </sheet>
@@ -62,8 +98,6 @@
                     <field name="amount"/>
                     <field name="state"/>
                     <field name="type"/>
-                    <!--<button name="export_file" string="Download" type="object" icon="fa-download"-->
-                    <!--attrs="{'invisible':[('state','=','draft')]}"/>-->
                 </tree>
             </field>
         </record>
