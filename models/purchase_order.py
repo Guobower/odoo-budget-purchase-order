@@ -59,7 +59,7 @@ class PurchaseOrder(models.Model):
     # ONCHANGE FIELDS
     # ----------------------------------------------------------
     @api.onchange('parent_id')
-    def _onchange_parent_id(self):
+    def _onchange_is_parent(self):
         self.is_parent = not self.parent_id
 
     # BUTTONS/TRANSITIONS

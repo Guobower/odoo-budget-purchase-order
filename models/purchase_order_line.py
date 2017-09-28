@@ -8,7 +8,7 @@ class PurchaseOrderLine(models.Model):
     _rec_name = 'sequence'
     _order = 'sequence asc'
 
-    sequence = fields.Integer(string='SR', default=0)
+    sequence = fields.Integer(string='SR', default=1)
     description = fields.Text(string='Description')
     quantity = fields.Float(default=0.00)
     unit_price = fields.Monetary(string='Price', currency_field='currency_id')
@@ -46,3 +46,15 @@ class PurchaseOrderLine(models.Model):
     @api.one
     def _inverse_revised_unit_price(self):
         pass
+
+    # POLYMORPH FUNCTIONS
+    # ----------------------------------------------------------
+    @api.multi
+    def name_get(self):
+        result = []
+        for record in self:
+            result.append((record.id, "{}: {}".format(record.po_id.no,
+                                                      record.sequence)
+                           )
+                          )
+        return result
