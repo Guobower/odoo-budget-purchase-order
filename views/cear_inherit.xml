@@ -7,7 +7,7 @@
         <record model="ir.ui.view" id="view_form_cear_inherit">
             <field name="name">Task Inherit</field>
             <field name="model">budget.capex.cear</field>
-            <field name="inherit_id" ref="budget_capex.view_form_cear_commitment"/>
+            <field name="inherit_id" ref="budget_capex.view_form_cear"/>
             <field name="arch" type="xml">
                 <xpath expr="//notebook/page[@name='financial']/notebook" position="inside">
                     <page string="Purchase Order">

@@ -25,7 +25,7 @@ Purchase Order Management
         'security/ir.model.access.csv',
 
         'views/purchase_order.xml',
-        'views/cear_inherit.xml',
+        # 'views/cear_inherit.xml',
         'views/menu.xml',
     ],
     'demo': [
