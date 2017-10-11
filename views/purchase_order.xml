@@ -31,7 +31,7 @@
                                 <field name="currency_id"/>
                             </group>
                         </group>
-                        <div class="oe_button_box" name="box">
+                        <div class="oe_button_box" name="button_box">
                         </div>
                         <div class="oe_title">
                             <h1>
