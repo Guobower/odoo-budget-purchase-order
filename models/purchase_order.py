@@ -13,7 +13,7 @@ class PurchaseOrder(models.Model):
     # CHOICES
     # ----------------------------------------------------------
     STATES = choices_tuple(['draft', 'active', 'closed', 'cancelled'], is_sorted=False)
-    TYPES = choices_tuple(['standard', 'blanket'], is_sorted=False)
+    TYPES = choices_tuple(['standard', 'blanket', 'planned'], is_sorted=False)
 
     # BASIC FIELDS
     # ----------------------------------------------------------
@@ -28,7 +28,7 @@ class PurchaseOrder(models.Model):
 
     # RELATIONSHIPS
     # ----------------------------------------------------------
-    currency_id = fields.Many2one('res.currency', readonly=True,
+    currency_id = fields.Many2one('res.currency', string="Currency",
                                   default=lambda self: self.env.user.company_id.currency_id)
 
     contractor_id = fields.Many2one('budget.contractor.contractor', string='Contractor')
