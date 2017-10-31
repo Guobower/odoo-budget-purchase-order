@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': "Purchase Order",
-    'version': '0.1',
+    'version': '11.0.0.1',
     'summary': 'Purchase Order Management',
     'sequence': 6,
     'description': """
