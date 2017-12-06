@@ -9,10 +9,15 @@
             <field name="model">budget.capex.cear</field>
             <field name="inherit_id" ref="budget_capex.view_form_cear"/>
             <field name="arch" type="xml">
-                <xpath expr="//notebook/page[@name='financial']/notebook" position="inside">
-                    <page string="Purchase Order">
-                        <field name="po_ids"/>
-                    </page>
+                <xpath expr="//page[2]/group[1]" position="before">
+                    <field name="po_ids">
+                        <tree>
+                            <field name="no"/>
+                            <field name="date"/>
+                            <field name="amount" sum="1"/>
+                            <field name="remark"/>
+                        </tree>
+                    </field>
                 </xpath>
             </field>
         </record>
