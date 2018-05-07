@@ -103,7 +103,7 @@
         </record>
         <!--END INVOICE SUMMARY VIEWS-->
         <!--START SEARCH-->
-        <record model="ir.ui.view" id="search_purchase_order">
+        <record model="ir.ui.view" id="view_search_purchase_order">
             <field name="name">Purchase Order</field>
             <field name="model">budget.purchase.order</field>
             <field name="arch" type="xml">
@@ -125,7 +125,7 @@
             <field name="view_type">form</field>
             <field name="view_mode">tree,form,pivot,graph</field>
             <field name="view_id" ref="view_tree_purchase_order"/>
-            <field name="search_view_id" ref="search_purchase_order"/>
+            <field name="search_view_id" ref="view_search_purchase_order"/>
             <field name="context">{'form_view_ref': 'budget_core.view_form_purchase_order',
                 'search_default_filter_state': 1}
             </field>
