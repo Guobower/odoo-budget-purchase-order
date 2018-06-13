@@ -59,19 +59,19 @@
                             <field name="remark"/>
                         </group>
                         <notebook>
-                            <page string="Lines">
-                                <field name="po_line_ids">
-                                    <tree editable="bottom">
-                                        <field name="po_id" groups="base.group_no_one"/>
-                                        <field name="sequence" widget="handle"/>
-                                        <field name="description"/>
-                                        <field name="quantity" sum="1"/>
-                                        <field name="unit_price" sum="1"/>
-                                        <field name="revised_unit_price" sum="1"/>
-                                        <field name="total_amount" sum="1"/>
-                                    </tree>
-                                </field>
-                            </page>
+                            <!--<page string="Lines">-->
+                                <!--<field name="po_line_ids">-->
+                                    <!--<tree editable="bottom">-->
+                                        <!--<field name="po_id" groups="base.group_no_one"/>-->
+                                        <!--<field name="sequence" widget="handle"/>-->
+                                        <!--<field name="description"/>-->
+                                        <!--<field name="quantity" sum="1"/>-->
+                                        <!--<field name="unit_price" sum="1"/>-->
+                                        <!--<field name="revised_unit_price" sum="1"/>-->
+                                        <!--<field name="total_amount" sum="1"/>-->
+                                    <!--</tree>-->
+                                <!--</field>-->
+                            <!--</page>-->
                             <page string="CEARs">
                                 <field name="cear_ids"/>
                             </page>
