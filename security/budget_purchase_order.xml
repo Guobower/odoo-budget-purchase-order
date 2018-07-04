@@ -24,5 +24,12 @@
             <field name="category_id" ref="category_purchase_order"/>
             <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
         </record>
+
+        <!-- END USER -->
+        <record model="res.groups" id="group_purchase_order_end_user">
+            <field name="name">End User</field>
+            <field name="category_id" ref="category_purchase_order"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
     </data>
 </odoo>
