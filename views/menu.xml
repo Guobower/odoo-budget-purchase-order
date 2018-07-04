@@ -6,6 +6,7 @@
         <menuitem
                 id="menu_purchase_order_top"
                 name="Purchase Order"
+                groups="budget_purchase_order.group_purchase_order_dependent,budget_purchase_order.group_purchase_order_user,budget_purchase_order.group_purchase_order_manager"
                 sequence="7"/>
         <menuitem
                 id="menu_purchase_order_left"
